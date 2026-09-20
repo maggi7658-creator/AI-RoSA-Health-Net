@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FFFDF6;
+    color: #000000;
+    font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Neobrutalism Design System Classes (Light Theme) */
+@layer components {
+  .brutal-card {
+    background-color: #FFFFFF;
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 0px 0px #000000;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .brutal-card-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px 0px #000000;
+  }
+
+  .brutal-btn {
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px 0px #000000;
+    font-weight: 800;
+    transition: all 0.1s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .brutal-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px 0px #000000;
+  }
+
+  .brutal-btn-yellow {
+    background-color: #FFE600;
+    color: #000000;
+  }
+  .brutal-btn-yellow:hover {
+    background-color: #FFDE00;
+  }
+
+  .brutal-btn-mint {
+    background-color: #70EE9C;
+    color: #000000;
+  }
+  .brutal-btn-mint:hover {
+    background-color: #5CE08A;
+  }
+
+  .brutal-btn-red {
+    background-color: #FF6B6B;
+    color: #000000;
+  }
+  .brutal-btn-red:hover {
+    background-color: #FA5252;
+  }
+
+  .brutal-btn-blue {
+    background-color: #60A5FA;
+    color: #000000;
+  }
+  .brutal-btn-blue:hover {
+    background-color: #3B82F6;
+  }
+
+  .brutal-btn-purple {
+    background-color: #D8B4FE;
+    color: #000000;
+  }
+  .brutal-btn-purple:hover {
+    background-color: #C084FC;
+  }
+
+  .brutal-btn-white {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  .brutal-btn-white:hover {
+    background-color: #F4F0EA;
+  }
+
+  .brutal-badge {
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0px 0px #000000;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .brutal-input {
+    border: 3px solid #000000;
+    box-shadow: 3px 3px 0px 0px #000000;
+    background-color: #FFFFFF;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.15s;
+  }
+  .brutal-input:focus {
+    box-shadow: 5px 5px 0px 0px #000000;
+    background-color: #FFFDE6;
+  }
+}
+
+/* Accessibility Font-Scale Modes for Elderly Users */
+.scale-normal {
+  font-size: 16px;
+}
+.scale-large {
+  font-size: 19px;
+}
+.scale-xl {
+  font-size: 22px;
+}
+
+/* Subtle pattern for brutalist canvas */
+.brutal-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
