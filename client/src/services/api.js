@@ -1,5 +1,6 @@
 // API client with automated offline fallback and queueing
 import { db, queueOfflineAction } from './db.js';
+import { SEED_MEDICINES, SEED_TESTS, SEED_PRESCRIPTIONS } from './initialData.js';
 
 const API_BASE = '/api';
 
@@ -143,7 +144,7 @@ export const api = {
     }
 
     const localRxs = await db.prescriptions.toArray();
-    return localRxs;
+    return localRxs.length > 0 ? localRxs : SEED_PRESCRIPTIONS;
   },
 
   async issuePrescription(rxData, isOffline = false) {
@@ -197,7 +198,7 @@ export const api = {
     }
 
     const cached = await db.cachedMedicines.toArray();
-    return cached;
+    return cached.length > 0 ? cached : SEED_MEDICINES;
   },
 
   async orderMedicine(orderData, isOffline = false) {
@@ -241,7 +242,7 @@ export const api = {
     }
 
     const cached = await db.cachedTests.toArray();
-    return cached;
+    return cached.length > 0 ? cached : SEED_TESTS;
   },
 
   async bookDiagnostic(bookingData, isOffline = false) {

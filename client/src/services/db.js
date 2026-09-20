@@ -1,4 +1,5 @@
 import Dexie from 'dexie';
+import { SEED_MEDICINES, SEED_TESTS, SEED_PRESCRIPTIONS } from './initialData.js';
 
 // Initialize AI-RoSA Offline-First IndexedDB
 export const db = new Dexie('AIRoSAHealthNetDB');
@@ -13,7 +14,7 @@ db.version(1).stores({
   sosAlerts: 'alertId, timestamp, status'
 });
 
-// Seed Initial Reminders if empty
+// Seed Initial Reminders and Catalog if empty
 export const seedInitialData = async () => {
   try {
     const reminderCount = await db.reminders.count();
@@ -64,8 +65,24 @@ export const seedInitialData = async () => {
           soundEnabled: true
         }
       ]);
-      console.log('[AI-RoSA DB] Initial elderly reminders seeded into IndexedDB');
     }
+
+    const rxCount = await db.prescriptions.count();
+    if (rxCount === 0) {
+      await db.prescriptions.bulkAdd(SEED_PRESCRIPTIONS);
+    }
+
+    const medCount = await db.cachedMedicines.count();
+    if (medCount === 0) {
+      await db.cachedMedicines.bulkAdd(SEED_MEDICINES);
+    }
+
+    const testCount = await db.cachedTests.count();
+    if (testCount === 0) {
+      await db.cachedTests.bulkAdd(SEED_TESTS);
+    }
+
+    console.log('[AI-RoSA DB] All initial health records and catalogs seeded into IndexedDB');
   } catch (err) {
     console.error('[AI-RoSA DB] Seed error:', err);
   }
