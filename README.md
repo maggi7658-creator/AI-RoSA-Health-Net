@@ -3,6 +3,8 @@
 > **Multilingual, Offline-First Healthcare Progressive Web App (PWA) designed for Rural Communities & Elderly Citizens.**  
 > Built with **Neobrutalism UI in Light Theme**, High-Contrast Senior Accessibility Controls, Voice AI (Speech-to-Text & TTS), WebRTC Teleconsultation, and One-Touch Emergency SOS.
 
+### 🌐 [Live Public Web App](https://maggi7658-creator.github.io/AI-RoSA-Health-Net/) • 📱 Installable PWA • 💾 Offline-First
+
 ---
 
 ## 🌟 Key Innovations & Features
